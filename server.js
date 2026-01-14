@@ -32,6 +32,7 @@ fastify.register(require("./plugins/jwt"));
 
 // register routes 
 fastify.register(require("./routes/auth"), { prefix: "/api/auth" });
+fastify.register(require("./routes/thumbnail"), { prefix: "/api/thumbnail" });
 
 
 fastify.get("/", function (request, reply) {
