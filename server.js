@@ -6,6 +6,13 @@ const fastifyEnv = require("@fastify/env");
 //register plugins
 fastify.register(require("@fastify/cors"));
 fastify.register(require("@fastify/sensible"));
+fastify.register(require("@fastify/multipart"));
+fastify.register(
+  require("@fastify/static", {
+    root: path.join(__dirname, "uploads"),
+    prefix: "/uploads/", // optional: default '/'
+  })
+);
 fastify.register(require("@fastify/env"), {
   dotenv: true,
   schema: {
